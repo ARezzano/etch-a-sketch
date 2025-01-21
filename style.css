@@ -1,8 +1,15 @@
+.outer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+
 .container{
     display: flex;
     flex-direction: column;
-
-    padding: 20px;
+    width: 600px;
+    height: 600px;
 }
 
 .column-div{
@@ -16,7 +23,6 @@
     border-width: 1px;
     border-color: rgb(139, 139, 139);
     margin: 0px 0px -1px -1px;
-    padding: 20px;
 }
 
 .painted{

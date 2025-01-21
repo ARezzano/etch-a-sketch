@@ -1,13 +1,21 @@
 var container = document.querySelector(".container");
 
-function createBasicGrid(){
-    for(var i = 0; i < 16; i++){
+function createGrid(rows = 16, cols = 16){
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+
+    var pixelWidth = Math.floor(containerWidth / rows);
+    var pixelHeight = Math.floor(containerHeight / cols);
+
+    for(var i = 0; i < rows; i++){
         var columnDiv = document.createElement("div");
         columnDiv.className = "column-div";
         
-        for(var j = 0; j < 16; j++){
+        for(var j = 0; j < cols; j++){
             var pixelDiv = document.createElement("div");
             pixelDiv.className = "row-div";
+            pixelDiv.style.width = `${pixelWidth}px`;
+            pixelDiv.style.height = `${pixelHeight}px`;
     
             columnDiv.appendChild(pixelDiv);
         }
@@ -18,7 +26,7 @@ function createBasicGrid(){
     return container;
 }
 
-createBasicGrid();
+createGrid(20,20);
 
 container.addEventListener("click", (event)=>{
     if(event.target.classList.contains("row-div")){
