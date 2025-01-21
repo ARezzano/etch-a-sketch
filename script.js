@@ -1,6 +1,6 @@
-function createBasicGrid(){
-    var container = document.querySelector(".container");
+var container = document.querySelector(".container");
 
+function createBasicGrid(){
     for(var i = 0; i < 16; i++){
         var columnDiv = document.createElement("div");
         columnDiv.className = "column-div";
@@ -20,5 +20,10 @@ function createBasicGrid(){
 
 createBasicGrid();
 
+container.addEventListener("click", (event)=>{
+    if(event.target.classList.contains("row-div")){
+        event.target.classList.add("painted");
+    }
+})
 
 

@@ -18,3 +18,11 @@
     margin: 0px 0px -1px -1px;
     padding: 20px;
 }
+
+.painted{
+    background-color: black;
+}
+
+.row-div:hover{
+    background-color: black;
+}
