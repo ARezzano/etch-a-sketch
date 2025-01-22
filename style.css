@@ -25,10 +25,6 @@
     margin: 0px 0px -1px -1px;
 }
 
-.painted{
-    background-color: black;
-}
-
 .row-div:hover{
-    background-color: black;
+    background-color: rgb(191, 214, 221);
 }

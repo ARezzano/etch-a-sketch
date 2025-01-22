@@ -1,4 +1,5 @@
 var container = document.querySelector(".container");
+var currentColor = getRandomColor();
 
 function createGrid(rows = 16, cols = 16){
     const containerWidth = container.offsetWidth;
@@ -26,11 +27,24 @@ function createGrid(rows = 16, cols = 16){
     return container;
 }
 
-createGrid(20,20);
+function getRandomColor(){
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return `rgb(${r},${g},${b})`;
+}
+
+createGrid(40,40);
 
 container.addEventListener("click", (event)=>{
     if(event.target.classList.contains("row-div")){
-        event.target.classList.add("painted");
+        currentColor = getRandomColor();
+    }
+})
+
+container.addEventListener("mouseover", (event)=>{
+    if(event.target.classList.contains("row-div")){
+        event.target.style.backgroundColor = currentColor;
     }
 })
 
