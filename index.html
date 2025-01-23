@@ -10,7 +10,13 @@
         
         <div class="titleCard">
             <h1>Etch-a-Sketch</h1>
-            <p>Paint by dragging your mouse cursor, click to change to a random color!</p>
+
+            <div class="subtext">
+                <p>Paint by dragging your mouse cursor, </p>
+                <p id="click-text"><b>click</b></p> 
+                <p>to change to a random color!</p>
+            </div>
+
         </div>
 
         <div class="etch-a-sketch">
@@ -20,9 +26,9 @@
                     <h2>What size do you want the grid to be?</h1>
                     <div class="options-inputs">
                         <p>Horizontal</p>
-                        <input maxlength="3" class="xinput">
+                        <input type="number" min="0" max="100" id="xinput">
                         <p>Vertical</p>
-                        <input maxlength="3" class="yinput">
+                        <input type="number" min="0" max="100" id="yinput">
                     </div>
                 </div>
                 

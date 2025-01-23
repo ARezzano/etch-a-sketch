@@ -27,6 +27,12 @@ p{
     padding: 40px 0px 60px 0px;
 }
 
+.subtext{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
 .etch-a-sketch{
     display: flex;
     flex-direction: row;
@@ -51,7 +57,7 @@ p{
 
 input{
     height: 30px;
-    width: 40px;
+    width: 50px;
     font-size: 20px;
     margin-left: -10px;
 }

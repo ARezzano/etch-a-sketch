@@ -1,7 +1,14 @@
 var container = document.querySelector(".container");
+var regenbutton = document.querySelector(".generate-grid");
+var xInput = document.getElementById("xinput");
+var yInput = document.getElementById("yinput");
 var currentColor = getRandomColor();
+var clickText = document.getElementById("click-text");
+clickText.style.color = currentColor;
 
-function createGrid(rows = 16, cols = 16){
+function createGrid(rows, cols){
+    container.innerHTML = "";
+
     const containerWidth = container.offsetWidth;
     const containerHeight = container.offsetHeight;
 
@@ -34,11 +41,12 @@ function getRandomColor(){
     return `rgb(${r},${g},${b})`;
 }
 
-createGrid(40,40);
+createGrid(16,16);
 
 container.addEventListener("click", (event)=>{
     if(event.target.classList.contains("row-div")){
         currentColor = getRandomColor();
+        clickText.style.color = currentColor;
     }
 })
 
@@ -47,5 +55,12 @@ container.addEventListener("mouseover", (event)=>{
         event.target.style.backgroundColor = currentColor;
     }
 })
+
+regenbutton.addEventListener("click", ()=>{
+    let newRows = xInput.value;
+    let newCols = yInput.value;
+
+    return createGrid(newRows,newCols);
+});
 
 
