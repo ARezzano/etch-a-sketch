@@ -41,6 +41,17 @@ function getRandomColor(){
     return `rgb(${r},${g},${b})`;
 }
 
+function enforceMinMax(val){
+    if(val.value != ""){
+        if(parseInt(val.value) < parseInt(val.min)){
+            val.value = val.min;
+        }
+        if(parseInt(val.value) > parseInt(val.max)){
+            val.value = val.max;
+        }
+    }
+}
+
 createGrid(16,16);
 
 container.addEventListener("click", (event)=>{

@@ -23,12 +23,13 @@
             <div class="options">
 
                 <div class="optionsCard1">
-                    <h2>What size do you want the grid to be?</h1>
+                    <h2>What size do you want the grid to be?</h2>
+
                     <div class="options-inputs">
                         <p>Horizontal</p>
-                        <input type="number" min="0" max="100" id="xinput">
+                        <input type="number" min="1" max="100" id="xinput" onkeyup=enforceMinMax(this)>
                         <p>Vertical</p>
-                        <input type="number" min="0" max="100" id="yinput">
+                        <input type="number" min="1" max="100" id="yinput" onkeyup=enforceMinMax(this)>
                     </div>
                 </div>
                 
