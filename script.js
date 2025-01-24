@@ -1,25 +1,25 @@
 var container = document.querySelector(".container");
 var regenbutton = document.querySelector(".generate-grid");
-var xInput = document.getElementById("xinput");
-var yInput = document.getElementById("yinput");
+var pixInput = document.getElementById("pixinput");
 var currentColor = getRandomColor();
 var clickText = document.getElementById("click-text");
+var cloneText = document.getElementById("clonetext");
 clickText.style.color = currentColor;
 
-function createGrid(rows, cols){
+function createGrid(val){
     container.innerHTML = "";
 
     const containerWidth = container.offsetWidth;
     const containerHeight = container.offsetHeight;
 
-    var pixelWidth = Math.floor(containerWidth / rows);
-    var pixelHeight = Math.floor(containerHeight / cols);
+    var pixelWidth = Math.floor(containerWidth / val);
+    var pixelHeight = Math.floor(containerHeight / val);
 
-    for(var i = 0; i < rows; i++){
+    for(var i = 0; i < val; i++){
         var columnDiv = document.createElement("div");
         columnDiv.className = "column-div";
         
-        for(var j = 0; j < cols; j++){
+        for(var j = 0; j < val; j++){
             var pixelDiv = document.createElement("div");
             pixelDiv.className = "row-div";
             pixelDiv.style.width = `${pixelWidth}px`;
@@ -52,7 +52,8 @@ function enforceMinMax(val){
     }
 }
 
-createGrid(16,16);
+cloneText.textContent = "wide and 0 pixels high!";
+createGrid(16);
 
 container.addEventListener("click", (event)=>{
     if(event.target.classList.contains("row-div")){
@@ -65,13 +66,17 @@ container.addEventListener("mouseover", (event)=>{
     if(event.target.classList.contains("row-div")){
         event.target.style.backgroundColor = currentColor;
     }
+    if((xInput.value == 1) && (yInput.value == 1)){
+        let sillyText = document.createElement("p");
+        sillyText.textContent = "OK I like it, Picasso!";
+        event.target.appendChild(sillyText);
+    }
 })
 
 regenbutton.addEventListener("click", ()=>{
-    let newRows = xInput.value;
-    let newCols = yInput.value;
+    let newPix = pixInput.value;
+    cloneText.textContent = `wide and ${pixInput.value} pixels high!`;
 
-    return createGrid(newRows,newCols);
+    return createGrid(newPix);
 });
-
 
