@@ -6,6 +6,8 @@ var clickText = document.getElementById("click-text");
 var cloneText = document.getElementById("clonetext");
 clickText.style.color = currentColor;
 
+var isPicasso = false;
+
 function createGrid(val){
     container.innerHTML = "";
 
@@ -66,17 +68,25 @@ container.addEventListener("mouseover", (event)=>{
     if(event.target.classList.contains("row-div")){
         event.target.style.backgroundColor = currentColor;
     }
-    if((xInput.value == 1) && (yInput.value == 1)){
+    if((pixInput.value == 1) && (!isPicasso)){
         let sillyText = document.createElement("p");
-        sillyText.textContent = "OK I like it, Picasso!";
+        sillyText.textContent = "OK I like it, Picasso";
         event.target.appendChild(sillyText);
+
+        isPicasso = true;
     }
 })
 
 regenbutton.addEventListener("click", ()=>{
     let newPix = pixInput.value;
-    cloneText.textContent = `wide and ${pixInput.value} pixels high!`;
 
-    return createGrid(newPix);
+    if(pixInput.value!=""){
+        cloneText.textContent = `wide and ${pixInput.value} pixels high!`;
+        isPicasso = false;
+    
+        return createGrid(newPix);
+    }
 });
+
+pixInput.enforceMinMax();
 

@@ -1,5 +1,6 @@
 body{
     font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(254, 255, 245);
 }
 
 .outer-container{
@@ -7,6 +8,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 600px;
+    width: 500px;
 }
 
 h2{
@@ -25,7 +27,8 @@ p{
     align-items: center;
     justify-content: center;
     padding: 40px 0px 60px 0px;
-    background-color: rgb(136, 194, 172);
+    background-color: rgb(255, 202, 133);
+    color: rgb(92, 60, 11);
 }
 
 .subtext{
@@ -40,6 +43,7 @@ p{
     justify-content: center;
     margin: 0px 80px 0px 80px;
     gap: 100px;
+    color: rgb(92, 60, 11);;
 }
 
 .options{
@@ -61,12 +65,17 @@ input{
     width: 50px;
     font-size: 20px;
     margin-left: -10px;
+    background-color:  rgb(255, 202, 133);
+    border-radius: 5px;
 }
 
 button{
     margin: 0px 80px 0px 80px;
     padding: 10px;
     font-size: 20px;
+    background-color:  rgb(255, 202, 133);
+    border-radius: 15px;
+    border-style: hidden;
 }
 
 .container{
@@ -83,9 +92,12 @@ button{
 }
 
 .row-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-style: solid;
     border-width: 1px;
-    border-color: rgb(139, 139, 139);
+    border-color: rgb(119, 81, 25);
     margin: 0px 0px -1px -1px;
 }
 
